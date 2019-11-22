@@ -1,0 +1,14 @@
+boolean obstacleClose = false;
+private double distanceToObject = 0;
+ultrasonicSensor.enable();
+distanceToObject = ultrasonicSensor.getDistanceMode(); //add to the moverobot 
+
+if (distanceToObject <= 0.3) {
+stop moving;
+obstacleClose = true;
+turn right 45 deg; }
+
+if ((distanceToObject > 0.5) && obstacleClose){
+moveRobot until it can turn left and not see obstacle
+findline (direction of movement away from obstacle)
+}
