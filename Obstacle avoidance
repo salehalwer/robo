@@ -3,11 +3,11 @@ private double distanceToObject = 0;
 ultrasonicSensor.enable();
 distanceToObject = ultrasonicSensor.getDistanceMode(); //add to the moverobot() method
 
-if (distanceToObject <= 0.3) {
+if (distanceToObject <= 0.15) {
 stop moving;
 obstacleClose = true;   
-turn right until obstacle no longer in USS view
-turn right (5 or 10) more degrees to the right}
+turn right until obstacle no longer in USS view 
+turn right (5 or 10) more degrees to the right   // or just turn 45 degrees}
 
 if ((distanceToObject > 0.5) && obstacleClose){
 moveRobot (3)* diagonal   // calculate speed of robot by testing, then find the time it needs to move (at that speed) in order 
