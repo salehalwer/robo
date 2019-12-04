@@ -4,28 +4,29 @@ ultrasonicSensor.enable();
 distanceToObject = ultrasonicSensor.getDistanceMode(); //add to the moverobot() method
 
 if (distanceToObject <= 0.15) {
-stop moving;
-obstacleClose = true;   
-turn right until obstacle no longer in USS view 
-turn right (5 or 10) more degrees to the right   // or just turn 45 degrees}
+	motorB.stop();
+	motorC.stop(); 
+	obstacleClose = true; 
+	}
 
 if ((distanceToObject > 0.5) && obstacleClose){
-moveRobot (3)* diagonal   // calculate speed of robot by testing, then find the time it needs to move (at that speed) in order 
-to move that distance. Run the moveRobot method for that amount of time
-try to turn left
+	long startTime = System.currentTimeMillis();
+	long timeSecond = 5; //time in seconds 
+	long timeInMilliSec = timeSecond * 1000;
+	while(System.currentTimeMillis() - startTime <= timeInMilliSec){
+  	motorC.forward(50); // use gyro to move forward at 50 degrees
+		motorB.forward(50); // use gyro to move forward at 50 degrees
+			}
+	try to turn left
   if (obstacle is there)
     turn back and move more
   else (obstacle is not there)
     findline() //move away from obstacle
-    }
+}
+public MoveAtAngle(int time, )
     
 
 
 
 run the moveRobot method for a certain amount of time: 
-long startTime = System.currentTimeMillis();
-long timeSecond = 5; //time in seconds 
-long timeInMilliSec = timeSecond * 1000;
-while(System.currentTimeMillis() - startTime <= timeInMilliSec){
-  moveRobot();
-}
+
